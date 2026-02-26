@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnuVanshika | Sustainable Lab Grown Diamonds</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS Reset & General Styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; color: #1a1a1a; line-height: 1.6; background-color: #fff; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: white;
+            border-bottom: 1px solid #f0f0f0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: #000;
+        }
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a:hover { color: #b58d3d; }
+
+        /* Hero Section - Minimalist & Impactful */
+        .hero {
+            height: 90vh;
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
+                        url('https://images.unsplash.com/photo-1573408302355-4e0b7caf3ad6?auto=format&fit=crop&q=80&w=2000'); /* High-end diamond bg */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+        .hero h1 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: clamp(40px, 8vw, 80px); 
+            margin-bottom: 20px; 
+        }
+        .hero p { font-size: 18px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 30px; }
+        .btn {
+            padding: 15px 40px;
+            border: 2px solid white;
+            background: transparent;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.4s;
+        }
+        .btn:hover { background: white; color: black; }
+
+        /* Technology Section (Like Anjali LabTech) */
+        .section { padding: 80px 10%; text-align: center; }
+        .section h2 { font-family: 'Playfair Display', serif; font-size: 36px; margin-bottom: 40px; }
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        .tech-item i { font-size: 40px; color: #b58d3d; }
+        .tech-item h3 { margin: 15px 0; font-family: 'Playfair Display', serif; }
+        .tech-item p { font-size: 14px; color: #666; }
+
+        /* Product Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            padding: 15px;
+        }
+        .gallery-item {
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+            color: white;
+        }
+        .gallery-item::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(transparent, rgba(0,0,0,0.6));
+        }
+        .gallery-item span { position: relative; z-index: 1; font-weight: 600; font-size: 20px; }
+
+        /* Footer */
+        footer {
+            background: #111;
+            color: #888;
+            padding: 60px 10% 20px;
+            text-align: center;
+        }
+        .footer-logo { color: white; font-size: 24px; margin-bottom: 20px; display: block; }
+        .copyright { margin-top: 40px; font-size: 12px; border-top: 1px solid #222; padding-top: 20px; }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 45px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">ANUVANSHIKA</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#diamonds">Diamonds</a></li>
+            <li><a href="#tech">Technology</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero" id="home">
+        <p>Pure. Conflict-Free. Brilliant.</p>
+        <h1>AnuVanshika Diamonds</h1>
+        <button class="btn">VIEW COLLECTIONS</button>
+    </header>
+
+    <section class="section" id="tech">
+        <h2>CVD Technology & Innovation</h2>
+        <p>Like the processes seen at Anjali LabTech, we utilize high-pressure chemical vapor deposition to grow diamonds that are chemically, physically, and optically identical to mined diamonds.</p>
+        
+        <div class="tech-grid">
+            <div class="tech-item">
+                <h3>Eco-Sustainable</h3>
+                <p>Zero mining. Zero habitat destruction. Our diamonds are grown with 100% renewable energy.</p>
+            </div>
+            <div class="tech-item">
+                <h3>Certified Quality</h3>
+                <p>Every stone is IGI or GIA certified, ensuring the highest standards of the 4Cs.</p>
+            </div>
+            <div class="tech-item">
+                <h3>Factory Direct</h3>
+                <p>By controlling the lab-growing process, AnuVanshika offers luxury without the middleman markup.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="gallery" id="diamonds">
+        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&q=80&w=800');">
+            <span>Loose Diamonds</span>
+        </div>
+        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1598560912005-796749c7da10?auto=format&fit=crop&q=80&w=800');">
+            <span>Engagement Rings</span>
+        </div>
+        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&q=80&w=800');">
+            <span>Luxury Solitaires</span>
+        </div>
+    </div>
+
+    <section class="section">
+        <h2>Ready to Shine?</h2>
+        <p>Contact the AnuVanshika team for wholesale inquiries or custom jewelry design.</p>
+        <br>
+        <p><strong>Email:</strong> info@anuvanshika.com</p>
+    </section>
+
+    <footer>
+        <span class="footer-logo">ANUVANSHIKA</span>
+        <p>Lab Grown Diamonds | Sustainable Luxury | Global Shipping</p>
+        <div class="copyright">
+            &copy; 2026 AnuVanshika Lab Grown Diamonds. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
