@@ -11,28 +11,28 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Montserrat', sans-serif; color: #111; background-color: #fff; line-height: 1.6; }
         
-        /* Premium Navigation */
+        /* Navigation */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 15px 8%;
-            background: rgba(255,255,255,0.98);
-            border-bottom: 1px solid #e5e5e5;
+            background: #fff;
+            border-bottom: 1px solid #eee;
             position: sticky;
             top: 0;
             z-index: 1000;
         }
-        .logo img { height: 55px; width: auto; }
+        .logo img { height: 50px; width: auto; }
         .nav-links { display: flex; gap: 35px; }
-        .nav-links a { text-decoration: none; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #333; transition: 0.3s; }
-        .nav-links a:hover { color: #c5a059; }
+        .nav-links a { text-decoration: none; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #333; font-weight: 600; }
+        .nav-links a:hover { color: #D4AF37; }
 
-        /* Cinematic Hero Section */
+        /* Hero - Ultra High Res Refraction */
         .hero {
-            height: 90vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), 
-                        url('https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?q=80&w=2000&auto=format&fit=crop'); 
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.1)), 
+                        url('https://images.unsplash.com/photo-1573408302355-4e0b7caf3ad6?q=80&w=2000&auto=format&fit=crop'); 
             background-size: cover;
             background-position: center;
             display: flex;
@@ -42,109 +42,40 @@
             text-align: center;
             color: white;
         }
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(40px, 8vw, 75px); font-weight: 400; margin-bottom: 10px; }
-        .hero p { font-size: 14px; letter-spacing: 6px; text-transform: uppercase; margin-bottom: 35px; font-weight: 200; }
-        .btn { padding: 15px 45px; border: 1px solid #fff; background: transparent; color: #fff; text-transform: uppercase; letter-spacing: 2px; font-size: 11px; cursor: pointer; transition: 0.4s; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(35px, 7vw, 65px); font-weight: 400; margin-bottom: 15px; letter-spacing: 2px; }
+        .hero p { font-size: 13px; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 30px; font-weight: 300; }
+        .btn { padding: 14px 40px; border: 1px solid #fff; background: transparent; color: #fff; text-transform: uppercase; letter-spacing: 2px; font-size: 11px; cursor: pointer; transition: 0.4s; }
         .btn:hover { background: #fff; color: #000; }
 
-        /* The Lab Technology (Anjali Style) */
-        .tech-section { padding: 100px 10%; background: #fdfdfd; display: flex; align-items: center; gap: 60px; }
+        /* Tech Section */
+        .tech-section { padding: 80px 10%; display: flex; align-items: center; gap: 50px; background: #fafafa; }
         .tech-text { flex: 1; }
-        .tech-text h2 { font-family: 'Playfair Display', serif; font-size: 38px; margin-bottom: 25px; }
-        .tech-text p { color: #666; margin-bottom: 20px; font-size: 15px; }
-        .tech-image { flex: 1; height: 500px; background: url('https://images.unsplash.com/photo-1588444837495-c6cfaf504670?q=80&w=1000&auto=format&fit=crop') center/cover; border-radius: 2px; }
+        .tech-text h2 { font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 20px; color: #1a1a1a; }
+        .tech-text p { color: #666; font-size: 15px; margin-bottom: 20px; font-weight: 300; }
+        .tech-image { flex: 1; height: 450px; background: url('https://images.unsplash.com/photo-1588444837495-c6cfaf504670?q=80&w=1000&auto=format&fit=crop') center/cover; box-shadow: 20px 20px 0px #f0f0f0; }
 
-        /* Jewelry Showcase - High End Ring Pics */
-        .showcase { padding: 80px 5%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .card { height: 500px; position: relative; overflow: hidden; display: flex; align-items: flex-end; padding: 40px; color: white; cursor: pointer; }
-        .card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(transparent, rgba(0,0,0,0.7)); z-index: 1; }
-        .card img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: 0.8s; }
-        .card:hover img { transform: scale(1.1); }
-        .card-content { position: relative; z-index: 2; }
-        .card-content h3 { font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 5px; }
-        .card-content span { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; }
+        /* The Grid - REAL High-End Photography */
+        .section-title { text-align: center; padding: 60px 0 20px; font-family: 'Playfair Display', serif; font-size: 30px; }
+        .underline { width: 40px; height: 2px; background: #D4AF37; margin: 0 auto 40px; }
 
-        /* Simple Professional Footer */
-        footer { background: #000; color: #fff; padding: 80px 10% 40px; text-align: center; }
-        .footer-logo { font-family: 'Playfair Display', serif; font-size: 30px; letter-spacing: 4px; margin-bottom: 20px; display: block; }
-        .footer-links { margin-bottom: 40px; opacity: 0.6; font-size: 12px; }
-        .footer-links a { margin: 0 15px; color: #fff; }
-        .copyright { font-size: 10px; color: #444; border-top: 1px solid #222; padding-top: 40px; letter-spacing: 1px; }
+        .showcase { padding: 0 10% 80px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: #fff; border: 1px solid #f0f0f0; text-align: center; padding-bottom: 30px; transition: 0.3s; }
+        .card:hover { box-shadow: 0 15px 40px rgba(0,0,0,0.05); }
+        .card img { width: 100%; height: 350px; object-fit: cover; margin-bottom: 20px; }
+        .card h3 { font-family: 'Playfair Display', serif; font-size: 20px; margin-bottom: 5px; font-weight: 400; }
+        .card span { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: #D4AF37; font-weight: 600; }
 
-        @media (max-width: 900px) {
-            .showcase { grid-template-columns: 1fr; }
-            .tech-section { flex-direction: column; padding: 60px 5%; }
+        /* Footer */
+        footer { background: #111; color: #fff; padding: 80px 10% 30px; text-align: center; }
+        .footer-logo { font-family: 'Playfair Display', serif; font-size: 26px; letter-spacing: 5px; margin-bottom: 30px; display: block; }
+        .footer-links { margin-bottom: 30px; opacity: 0.6; font-size: 11px; }
+        .footer-links a { margin: 0 15px; color: #fff; text-decoration: none; }
+        .copyright { font-size: 10px; color: #555; border-top: 1px solid #222; padding-top: 30px; letter-spacing: 1px; }
+
+        @media (max-width: 800px) {
+            .tech-section { flex-direction: column; text-align: center; }
             .nav-links { display: none; }
         }
     </style>
 </head>
 <body>
-
-    <nav>
-        <div class="logo">
-            <img src="logo.png" alt="AnuVanshika Logo" onerror="this.src='https://via.placeholder.com/200x60?text=ANUVANSHIKA'">
-        </div>
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Technology</a></li>
-            <li><a href="#">Our Diamonds</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
-
-    <header class="hero">
-        <p>Conflict-Free. Carbon Neutral.</p>
-        <h1>The AnuVanshika Standard</h1>
-        <button class="btn">Explore The Collection</button>
-    </header>
-
-    <section class="tech-section">
-        <div class="tech-text">
-            <h2>Pioneering the CVD Process</h2>
-            <p>At AnuVanshika, we don't just sell diamonds; we grow them. Using Microwave Plasma Chemical Vapor Deposition, we replicate the earth's natural heat and pressure to create Type IIa diamonds of unparalleled purity.</p>
-            <p>Identical to mined diamonds in every chemical and physical aspect, but without the environmental cost.</p>
-            <button class="btn" style="border-color: #333; color: #333;">Learn Our Tech</button>
-        </div>
-        <div class="tech-image"></div>
-    </section>
-
-    <section class="showcase">
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=1000&auto=format&fit=crop" alt="Engagement Ring">
-            <div class="card-content">
-                <span>The Signature Series</span>
-                <h3>Engagement Rings</h3>
-            </div>
-        </div>
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1615655406736-b37c4fabf923?q=80&w=1000&auto=format&fit=crop" alt="Loose Diamond">
-            <div class="card-content">
-                <span>Ethically Grown</span>
-                <h3>Loose Solitaires</h3>
-            </div>
-        </div>
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=1000&auto=format&fit=crop" alt="Jewelry Detail">
-            <div class="card-content">
-                <span>Bespoke Design</span>
-                <h3>Sustainable Luxury</h3>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <span class="footer-logo">ANUVANSHIKA</span>
-        <div class="footer-links">
-            <a href="#">The Diamond Guide</a>
-            <a href="#">Shipping</a>
-            <a href="#">Privacy</a>
-            <a href="#">Contact</a>
-        </div>
-        <p style="font-size: 13px; color: #888;">Factory: Surat, India | Corporate: Mumbai, India</p>
-        <div class="copyright">
-            &copy; 2026 ANUVANSHIKA LAB TECH DIAMONDS. ALL RIGHTS RESERVED.
-        </div>
-    </footer>
-
-</body>
-</html>
