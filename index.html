@@ -1,196 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AnuVanshika | Multi-Industry Excellence</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AnuVanshika | Multi-Industry Excellence</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <style>
-        :root {
-            --gold: #c5a059;
-            --clay: #d2b48c; /* For Fuller's Earth */
-            --dark: #1a1a1a;
-        }
+  <style>
+    :root { --gold: #c5a059; --dark: #1a1a1a; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Montserrat', sans-serif; background: #fff; color: var(--dark); }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Montserrat', sans-serif; background: #fff; color: var(--dark); overflow-x: hidden; }
+    /* Navbar */
+    nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 8%; background: #fff; border-bottom: 1px solid #eee;
+      position: sticky; top: 0; z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .logo { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: bold; letter-spacing: 3px; }
+    .nav-links { display: flex; list-style: none; gap: 25px; }
+    .nav-links a {
+      text-decoration: none; color: #555; font-size: 12px; text-transform: uppercase;
+      letter-spacing: 1px; position: relative; transition: 0.3s;
+    }
+    .nav-links a::after {
+      content: ""; position: absolute; width: 0; height: 2px; background: var(--gold);
+      left: 0; bottom: -5px; transition: 0.3s;
+    }
+    .nav-links a:hover::after { width: 100%; }
 
-        /* Navigation */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 8%;
-            background: #fff;
-            border-bottom: 1px solid #eee;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        .logo { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: bold; letter-spacing: 3px; }
-        .nav-links { display: flex; list-style: none; gap: 25px; }
-        .nav-links a { text-decoration: none; color: #555; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
-        .nav-links a:hover { color: var(--gold); }
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      text-align: center; color: white; position: relative;
+    }
+    .hero::after {
+      content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7));
+    }
+    .hero h1, .hero p, .hero a { position: relative; z-index: 2; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 5vw, 60px); margin-bottom: 15px; }
+    .hero p { max-width: 700px; font-size: 16px; line-height: 1.8; margin-bottom: 20px; }
+    .hero a {
+      display: inline-block; padding: 12px 30px; background: var(--gold); color: white;
+      text-transform: uppercase; font-size: 12px; letter-spacing: 2px; text-decoration: none;
+      transition: 0.3s;
+    }
+    .hero a:hover { background: white; color: var(--dark); }
 
-        /* Hero Banner */
-        .hero {
-            height: 60vh;
-            background: #f8f8f8;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-        }
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(30px, 5vw, 55px); margin-bottom: 15px; }
-        .hero p { max-width: 600px; color: #777; font-weight: 300; line-height: 1.8; }
+    /* Sectors Grid */
+    .business-container {
+      display: grid; grid-template-columns: repeat(3, 1fr); height: 600px; width: 100%;
+    }
+    .sector {
+      position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+    }
+    .sector img { position: absolute; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.6); transition: 0.8s; }
+    .sector:hover img { transform: scale(1.1); filter: brightness(0.4); }
+    .sector-content { position: relative; z-index: 2; text-align: center; color: white; }
+    .sector-content h2 { font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 10px; }
+    .sector-content p { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; }
 
-        /* Three Field Selection Grid */
-        .business-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            height: 600px;
-            width: 100%;
-        }
+    /* Contact Section */
+    .contact { padding: 80px 10%; background: #f9f9f9; text-align: center; }
+    .contact h2 { font-family: 'Playfair Display', serif; margin-bottom: 20px; }
+    form { max-width: 600px; margin: auto; display: grid; gap: 15px; }
+    input, textarea {
+      padding: 12px; border: 1px solid #ccc; font-size: 14px; width: 100%;
+    }
+    button {
+      padding: 12px; background: var(--gold); color: white; border: none; cursor: pointer;
+      text-transform: uppercase; letter-spacing: 2px; transition: 0.3s;
+    }
+    button:hover { background: var(--dark); }
 
-        .sector {
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: 0.5s ease;
-            cursor: pointer;
-        }
+    /* Footer */
+    footer { background: #111; color: white; padding: 40px 10%; text-align: center; }
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 22px; margin-bottom: 20px; display: block; }
+    .social-icons a { color: var(--gold); margin: 0 10px; font-size: 18px; transition: 0.3s; }
+    .social-icons a:hover { color: white; }
 
-        .sector img {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: brightness(0.7);
-            transition: 0.8s;
-        }
-
-        .sector:hover img { transform: scale(1.1); filter: brightness(0.5); }
-
-        .sector-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            color: white;
-            padding: 20px;
-        }
-
-        .sector-content h2 { font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 10px; }
-        .sector-content p { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; }
-
-        .tag {
-            background: var(--gold);
-            color: white;
-            padding: 5px 15px;
-            font-size: 10px;
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            text-transform: uppercase;
-        }
-
-        /* Call to Action */
-        .cta-section { padding: 100px 10%; text-align: center; background: #fff; }
-        .cta-btn { 
-            display: inline-block; 
-            margin-top: 30px; 
-            padding: 15px 40px; 
-            border: 1px solid var(--dark); 
-            background: none; 
-            text-transform: uppercase; 
-            letter-spacing: 2px; 
-            font-size: 12px; 
-            cursor: pointer;
-            transition: 0.4s;
-        }
-        .cta-btn:hover { background: var(--dark); color: #fff; }
-
-        /* Footer */
-        footer { background: #111; color: white; padding: 60px 10%; text-align: center; }
-        .footer-logo { font-family: 'Playfair Display', serif; font-size: 22px; margin-bottom: 20px; display: block; }
-        
-        @media (max-width: 768px) {
-            .business-container { grid-template-columns: 1fr; height: auto; }
-            .sector { height: 400px; }
-            .nav-links { display: none; }
-        }
-    </style>
+    @media (max-width: 768px) {
+      .business-container { grid-template-columns: 1fr; height: auto; }
+      .sector { height: 400px; }
+      .nav-links { display: none; }
+    }
+  </style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo">ANUVANSHIKA</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#sectors">Our Verticals</a></li>
-            <li><a href="#contact">Enquiry</a></li>
-        </ul>
-    </nav>
+  <nav>
+    <div class="logo">ANUVANSHIKA</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#sectors">Our Verticals</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-    <header class="hero" id="home">
-        <h1>Crafting Authenticity</h1>
-        <p>AnuVanshika brings you the finest in nature, art, and adornment. From the earth's natural minerals to handcrafted heritage and modern jewelry.</p>
-    </header>
+  <header class="hero" id="home">
+    <h1>Crafting Authenticity</h1>
+    <p>From ethical lab-grown diamonds to heritage handicrafts and natural minerals, AnuVanshika delivers excellence worldwide.</p>
+    <a href="#contact">Get in Touch</a>
+  </header>
 
-    <div class="business-container" id="sectors">
-        <div class="sector" onclick="location.href='#fuller'">
-            <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&q=80&w=800" alt="Fuller's Earth">
-            <div class="tag">Skincare</div>
-            <div class="sector-content">
-                <h2>Fuller's Earth</h2>
-                <p>Pure Multani Mitti</p>
-            </div>
-        </div>
-
-        <div class="sector" onclick="location.href='#handicrafts'">
-            <img src="https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&q=80&w=800" alt="Handicrafts">
-            <div class="tag">Heritage</div>
-            <div class="sector-content">
-                <h2>Unique Handicrafts</h2>
-                <p>Artisanal Masterpieces</p>
-            </div>
-        </div>
-
-        <div class="sector" onclick="location.href='#jewellery'">
-            <img src="https://images.unsplash.com/photo-1535633302704-c02f4f7d022e?auto=format&fit=crop&q=80&w=800" alt="Jewellery">
-            <div class="tag">Fashion</div>
-            <div class="sector-content">
-                <h2>Unique Artificial Jewellery</h2>
-                <p>Bespoke Adornments</p>
-            </div>
-        </div>
+  <div class="business-container" id="sectors">
+    
+    <div class="sector">
+      <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=1000&auto=format&fit=crop" alt="Natural Clay and Earth">
+      <div class="sector-content">
+        <h2>Fuller's Earth</h2>
+        <p>Pure Multani Mitti</p>
+      </div>
     </div>
 
-    <section class="cta-section">
-        <h2>Wholesale & Retail Enquiries</h2>
-        <p>Interested in our products? We export worldwide.</p>
-        <button class="cta-btn" onclick="alert('Thank you for your interest! Please email info@anuvanshika.com')">Contact Sales Team</button>
-    </section>
+    <div class="sector">
+      <img src="https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?q=80&w=1000&auto=format&fit=crop" alt="Indian Brass Artifacts">
+      <div class="sector-content">
+        <h2>Unique Handicrafts</h2>
+        <p>Brass & Clay Masterpieces</p>
+      </div>
+    </div>
 
-    <footer>
-        <span class="footer-logo">ANUVANSHIKA</span>
-        <p style="font-size: 11px; color: #666; letter-spacing: 1px;">MINERALS | HANDICRAFTS | JEWELLERY</p>
-        <div style="margin-top: 30px; font-size: 10px; color: #444;">
-            &copy; 2026 ANUVANSHIKA GROUP. ALL RIGHTS RESERVED.
-        </div>
-    </footer>
+    <div class="sector">
+      <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1000&auto=format&fit=crop" alt="Detailed Lab Grown Diamond Ring">
+      <div class="sector-content">
+        <h2>Lab-Grown Diamonds</h2>
+        <p>Sustainable Brilliance</p>
+      </div>
+    </div>
+  </div>
 
-    <script>
-        // Smooth reveal on load
-        window.onload = function() {
-            console.log("AnuVanshika Enterprise Site Active");
-        }
-    </script>
+  <section class="contact" id="contact">
+    <h2>Wholesale & Retail Enquiries</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <div class="footer-logo">ANUVANSHIKA</div>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p style="font-size: 10px; margin-top: 20px; color: #555;">&copy; 2026 AnuVanshika. All Rights Reserved.</p>
+  </footer>
 
 </body>
 </html>
