@@ -3,72 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AnuVanshika | High-End Lab Grown Diamonds</title>
+    <title>AnuVanshika | Multi-Industry Excellence</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
-        /* Essential Reset */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Montserrat', sans-serif; color: #111; background-color: #ffffff; line-height: 1.6; }
+        :root {
+            --gold: #c5a059;
+            --clay: #d2b48c; /* For Fuller's Earth */
+            --dark: #1a1a1a;
+        }
 
-        /* Premium Navbar */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; background: #fff; color: var(--dark); overflow-x: hidden; }
+
+        /* Navigation */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 5%;
+            padding: 20px 8%;
             background: #fff;
-            border-bottom: 1px solid #eeeeee;
+            border-bottom: 1px solid #eee;
             position: sticky;
             top: 0;
             z-index: 1000;
         }
-        .logo img { height: 50px; width: auto; display: block; }
-        .nav-links { display: flex; gap: 30px; }
-        .nav-links a { text-decoration: none; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #333; font-weight: 600; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: bold; letter-spacing: 3px; }
+        .nav-links { display: flex; list-style: none; gap: 25px; }
+        .nav-links a { text-decoration: none; color: #555; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        .nav-links a:hover { color: var(--gold); }
 
-        /* High-End Hero Section */
+        /* Hero Banner */
         .hero {
-            height: 75vh;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), 
-                        url('https://images.unsplash.com/photo-1598560912005-796749c7da10?q=80&w=2000&auto=format&fit=crop'); 
-            background-size: cover;
-            background-position: center;
+            height: 60vh;
+            background: #f8f8f8;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            color: white;
+            padding: 0 20px;
         }
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(35px, 6vw, 60px); margin-bottom: 10px; font-weight: 400; }
-        .hero p { font-size: 12px; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 30px; }
-        .btn { padding: 14px 40px; border: 1px solid #fff; background: transparent; color: #fff; text-transform: uppercase; letter-spacing: 2px; font-size: 11px; cursor: pointer; transition: 0.3s; }
-        .btn:hover { background: #fff; color: #000; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(30px, 5vw, 55px); margin-bottom: 15px; }
+        .hero p { max-width: 600px; color: #777; font-weight: 300; line-height: 1.8; }
 
-        /* The Lab Technology Section */
-        .tech-container { padding: 80px 10%; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; background: #fafafa; }
-        .tech-text h2 { font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 20px; }
-        .tech-text p { color: #666; font-size: 15px; margin-bottom: 20px; }
-        .tech-image { width: 100%; height: 400px; background: url('https://images.unsplash.com/photo-1573408302355-4e0b7caf3ad6?q=80&w=1000&auto=format&fit=crop') center/cover; border: 10px solid #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        /* Three Field Selection Grid */
+        .business-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            height: 600px;
+            width: 100%;
+        }
 
-        /* Products - THE REAL DIAMOND LOOK */
-        .product-grid { padding: 60px 10%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .product-card { background: #fff; text-align: center; border: 1px solid #f0f0f0; transition: 0.4s; padding-bottom: 25px; }
-        .product-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.08); }
-        .product-card img { width: 100%; height: 400px; object-fit: cover; margin-bottom: 20px; }
-        .product-card span { font-size: 10px; color: #D4AF37; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; }
-        .product-card h3 { font-family: 'Playfair Display', serif; font-size: 22px; margin-top: 5px; font-weight: 400; }
+        .sector {
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.5s ease;
+            cursor: pointer;
+        }
+
+        .sector img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7);
+            transition: 0.8s;
+        }
+
+        .sector:hover img { transform: scale(1.1); filter: brightness(0.5); }
+
+        .sector-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .sector-content h2 { font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 10px; }
+        .sector-content p { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; }
+
+        .tag {
+            background: var(--gold);
+            color: white;
+            padding: 5px 15px;
+            font-size: 10px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            text-transform: uppercase;
+        }
+
+        /* Call to Action */
+        .cta-section { padding: 100px 10%; text-align: center; background: #fff; }
+        .cta-btn { 
+            display: inline-block; 
+            margin-top: 30px; 
+            padding: 15px 40px; 
+            border: 1px solid var(--dark); 
+            background: none; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            font-size: 12px; 
+            cursor: pointer;
+            transition: 0.4s;
+        }
+        .cta-btn:hover { background: var(--dark); color: #fff; }
 
         /* Footer */
-        footer { background: #111; color: #fff; padding: 60px 10% 20px; text-align: center; }
-        .f-logo { font-family: 'Playfair Display', serif; font-size: 24px; letter-spacing: 4px; display: block; margin-bottom: 20px; }
-        .copyright { font-size: 10px; color: #555; border-top: 1px solid #222; margin-top: 40px; padding-top: 20px; letter-spacing: 1px; }
-
-        /* Responsive */
-        @media (max-width: 800px) {
-            .tech-container { grid-template-columns: 1fr; text-align: center; }
+        footer { background: #111; color: white; padding: 60px 10%; text-align: center; }
+        .footer-logo { font-family: 'Playfair Display', serif; font-size: 22px; margin-bottom: 20px; display: block; }
+        
+        @media (max-width: 768px) {
+            .business-container { grid-template-columns: 1fr; height: auto; }
+            .sector { height: 400px; }
             .nav-links { display: none; }
         }
     </style>
@@ -76,58 +129,68 @@
 <body>
 
     <nav>
-        <div class="logo">
-            <img src="logo.png" alt="AnuVanshika" onerror="this.style.display='none'; this.after('ANUVANSHIKA');">
-        </div>
+        <div class="logo">ANUVANSHIKA</div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
-            <li><a href="#lab">Technology</a></li>
-            <li><a href="#diamonds">Our Stones</a></li>
+            <li><a href="#sectors">Our Verticals</a></li>
+            <li><a href="#contact">Enquiry</a></li>
         </ul>
     </nav>
 
-    <div class="hero" id="home">
-        <p>Luxury Without Compromise</p>
-        <h1>AnuVanshika Diamonds</h1>
-        <button class="btn">Explore Collection</button>
+    <header class="hero" id="home">
+        <h1>Crafting Authenticity</h1>
+        <p>AnuVanshika brings you the finest in nature, art, and adornment. From the earth's natural minerals to handcrafted heritage and modern jewelry.</p>
+    </header>
+
+    <div class="business-container" id="sectors">
+        <div class="sector" onclick="location.href='#fuller'">
+            <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&q=80&w=800" alt="Fuller's Earth">
+            <div class="tag">Skincare</div>
+            <div class="sector-content">
+                <h2>Fuller's Earth</h2>
+                <p>Pure Multani Mitti</p>
+            </div>
+        </div>
+
+        <div class="sector" onclick="location.href='#handicrafts'">
+            <img src="https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&q=80&w=800" alt="Handicrafts">
+            <div class="tag">Heritage</div>
+            <div class="sector-content">
+                <h2>Unique Handicrafts</h2>
+                <p>Artisanal Masterpieces</p>
+            </div>
+        </div>
+
+        <div class="sector" onclick="location.href='#jewellery'">
+            <img src="https://images.unsplash.com/photo-1535633302704-c02f4f7d022e?auto=format&fit=crop&q=80&w=800" alt="Jewellery">
+            <div class="tag">Fashion</div>
+            <div class="sector-content">
+                <h2>Unique Artificial Jewellery</h2>
+                <p>Bespoke Adornments</p>
+            </div>
+        </div>
     </div>
 
-    <section class="tech-container" id="lab">
-        <div class="tech-text">
-            <h2>Ethical CVD Innovation</h2>
-            <p>Following the highest standards of lab-grown technology, we create diamonds that are 100% chemically identical to mined stones.</p>
-            <p>Our MPCVD process ensures every stone reaches Type IIa purity—the highest quality rating in the world.</p>
-        </div>
-        <div class="tech-image"></div>
-    </section>
-
-    <section class="product-grid" id="diamonds">
-        <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1615655406736-b37c4fabf923?q=80&w=1000&auto=format&fit=crop" alt="Loose Diamond Solitaire">
-            <span>The Brilliance Series</span>
-            <h3>Loose Solitaries</h3>
-        </div>
-
-        <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=1000&auto=format&fit=crop" alt="Diamond Ring">
-            <span>Handcrafted Luxury</span>
-            <h3>Signature Rings</h3>
-        </div>
-
-        <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1596516109370-29001ec8ec36?q=80&w=1000&auto=format&fit=crop" alt="Macro Diamond">
-            <span>CVD Precision</span>
-            <h3>Technical Excellence</h3>
-        </div>
+    <section class="cta-section">
+        <h2>Wholesale & Retail Enquiries</h2>
+        <p>Interested in our products? We export worldwide.</p>
+        <button class="cta-btn" onclick="alert('Thank you for your interest! Please email info@anuvanshika.com')">Contact Sales Team</button>
     </section>
 
     <footer>
-        <span class="f-logo">ANUVANSHIKA</span>
-        <p style="font-size: 12px; color: #888;">Sustainable Luxury | Lab Grown Excellence</p>
-        <div class="copyright">
-            &copy; 2026 ANUVANSHIKA DIAMONDS. ALL RIGHTS RESERVED.
+        <span class="footer-logo">ANUVANSHIKA</span>
+        <p style="font-size: 11px; color: #666; letter-spacing: 1px;">MINERALS | HANDICRAFTS | JEWELLERY</p>
+        <div style="margin-top: 30px; font-size: 10px; color: #444;">
+            &copy; 2026 ANUVANSHIKA GROUP. ALL RIGHTS RESERVED.
         </div>
     </footer>
+
+    <script>
+        // Smooth reveal on load
+        window.onload = function() {
+            console.log("AnuVanshika Enterprise Site Active");
+        }
+    </script>
 
 </body>
 </html>
